@@ -1,0 +1,1 @@
+//Schema ou definição estrutural dos dados.

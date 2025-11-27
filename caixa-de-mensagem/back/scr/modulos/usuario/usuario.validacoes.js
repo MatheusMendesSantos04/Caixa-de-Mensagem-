@@ -1,0 +1,1 @@
+// Valida dados de entrada com Zod/Joi/Yup.

@@ -1,0 +1,6 @@
+conectar_usuario
+desconectar_usuario
+enviar_mensagem
+receber_mensagem
+usuario_digitando
+verificar_status

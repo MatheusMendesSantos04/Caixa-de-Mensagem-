@@ -1,0 +1,82 @@
+1. /config → Configurações centrais
+
+Conexão com o banco
+
+Setup do WebSocket
+
+Config do JWT (tempo de expiração, chave secreta)
+
+Por que?
+Desacopla setups técnicos do resto da aplicação — padrão de governança técnica básica.
+
+2. /core → Coração do servidor
+
+servidor.js: monta express, middlewares, websocket, cors, etc.
+
+rotas.js: registra as rotas de cada módulo.
+
+Por que?
+Facilita manutenção e escalabilidade.
+
+3. /modulos → Domínios da aplicação
+
+Cada funcionalidade tem seu próprio módulo com 5 camadas:
+
+a. controlador
+
+Recebe requisição → chama serviço → devolve resposta.
+
+b. serviço
+
+Regra de negócio real.
+Nada de tocar banco aqui diretamente.
+
+c. repositório
+
+Acesso ao banco.
+CRUD, queries, etc.
+
+d. modelo
+
+Schema quando usar ORM/ODM ou validação estrutural.
+(Tipo Sequelize, Prisma, Mongoose, Zod, etc.)
+
+e. validações
+
+Zod / Joi / Yup para dados de entrada.
+
+Por que?
+Arquitetura limpa.
+Baixo acoplamento.
+Alta manutenibilidade.
+
+4. /utils → Funções utilitárias
+
+Criptografia, helpers, tratamentos de erro, logs, respostas padronizadas.
+
+5. /middlewares
+
+Autenticação JWT
+
+Validação de dados
+
+Rate-limit (se for necessário)
+
+6. /websocket
+
+Eventos emitidos e escutados
+
+Gerenciamento de conexões
+
+Broadcasts
+
+Mapeamento de salas (caso use)
+
+Por que?
+Separa o real-time do restante do back-end HTTP.
+
+7. Raiz
+
+app.js: instancia app express
+
+server.js: sobe servidor + websocket

@@ -1,0 +1,9 @@
+Token com expiração (ex: 3h)
+
+Payload: id, nome, role
+
+Middleware de validação obrigatório
+
+Refresh token opcional
+
+Armazenamento via cookies ou header Authorization
