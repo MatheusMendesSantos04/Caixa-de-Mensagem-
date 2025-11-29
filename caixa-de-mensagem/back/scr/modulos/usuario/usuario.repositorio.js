@@ -1,1 +1,0 @@
-//Comunica com o banco. CRUD, queries.

@@ -1,1 +1,0 @@
-//Recebe requisições → chama o serviço → retorna resposta.

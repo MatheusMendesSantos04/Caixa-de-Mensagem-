@@ -1,1 +1,0 @@
-//Contém toda a regra de negócio. Nada de acessar banco diretamente.
